@@ -1,10 +1,6 @@
-#criar-tarefa {
-  width: auto;
-  height: auto;
-}
-
 .selected {
   background-color: gray;
+  border-radius: 3px;
 }
 
 .completed {
@@ -13,21 +9,44 @@
 
 header {
   padding: 10px;
+  background-color: rgb(192, 224, 252);
+  border-radius: 3px;
+  margin-bottom: 5px;
 }
 
 #funcionamento {
   margin-bottom: 10px;
 }
 
-#texto-tarefa {
-  margin-left: 10px;
-  margin-bottom: 10px;
+#texto-tarefa , #btnmover {
+  margin-top: 5px;
 }
 
 #section1 {
   padding: 10px;
 }
 
+#section1 {
+  background-color: rgb(192, 224, 252);
+  border-radius: 3px;
+}
+
 ol {
   list-style-type: none;
+  padding: 0px;
+  background-color: rgb(192, 224, 252);
+  border-radius: 3px;
+  border-bottom: 0px;
+}
+
+li {
+  padding: 2px;
+  padding-left: 8px;
+}
+
+#section0 {
+  width: 31%;
+  padding: 20px;
+  background-color: rgb(64, 171, 221);
+  border-radius: 5px;
 }

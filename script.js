@@ -7,6 +7,9 @@ const btnSalvar = document.querySelector('#salvar-tarefas');
 const lista = document.getElementsByTagName('li');
 const array = [];
 const array2 = [];
+const btnCima = document.querySelector('#mover-cima');
+const btnBaixo = document.querySelector('#mover-baixo');
+const btnDel = document.querySelector('#remover-selecionado');
 
 function addNaLi() {
   const li = document.createElement('li');
@@ -117,3 +120,41 @@ window.onload = function setaPagina() {
     LIST = [];
   }
 };
+
+function mudaCima() {
+  const selected = document.querySelector('.selected');
+  if (selected === null || selected.previousElementSibling === null) {
+    console.log('Não é possivel subir mais');
+  } else if (selected) {
+    const mudando = selected.previousElementSibling;
+    listaOl.insertBefore(selected, mudando);
+  }
+}
+btnCima.addEventListener('click', mudaCima);
+
+function mudaBaixo() {
+  const selected = document.querySelector('.selected');
+  if (selected === null || selected.nextElementSibling === null) {
+    console.log('Não é possivel descer mais');
+  } else if (selected) {
+    const mudando = selected.nextElementSibling;
+    listaOl.insertBefore(selected, mudando.nextElementSibling);
+  }
+}
+btnBaixo.addEventListener('click', mudaBaixo);
+
+// se nao adicionar o event listener fora da funcao o if nao funciona nao sei pq,
+// nao sei agora que eu resolvi a questao se colocar ele dentro ia mudar algo
+// mas assim esta funcionando
+
+// https://developer.mozilla.org/pt-BR/docs/Web/API/Node/insertBefore
+
+// acho que aprendi a usar o console pra me salvar dos stucks que eu tenho
+
+function removeSelected() {
+  const selected = document.querySelector('.selected');
+  if (selected) {
+    selected.remove();
+  }
+}
+btnDel.addEventListener('click', removeSelected);
