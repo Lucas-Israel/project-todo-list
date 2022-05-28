@@ -5,8 +5,8 @@ const btnApagaTudo = document.querySelector('#apaga-tudo');
 const btApgComp = document.querySelector('#remover-finalizados');
 const btnSalvar = document.querySelector('#salvar-tarefas');
 const lista = document.getElementsByTagName('li');
-let array = [];
-let array2 = [];
+const array = [];
+const array2 = [];
 
 function addNaLi() {
   const li = document.createElement('li');
@@ -73,6 +73,18 @@ apagaCompleto();
 
 // botao que apaga todos os com classe completo /\
 
+function savando() {
+  array.length = 0;
+  for (let index = 0; index < lista.length; index += 1) {
+    array.push(lista[index].innerText);
+  }
+  localStorage.setItem('toDoListA', JSON.stringify(array));
+  for (let index = 0; index < lista.length; index += 1) {
+    array2.push(lista[index].className);
+  }
+  localStorage.setItem('toDoListB', JSON.stringify(array2));
+}
+
 function btnSaveTarefa() {
   btnSalvar.addEventListener('click', () => {
     localStorage.clear();
@@ -81,40 +93,27 @@ function btnSaveTarefa() {
 }
 btnSaveTarefa();
 
-function savando() {
-  array.length = 0;
-  for (let index = 0; index < lista.length; index += 1) {
-    array.push(lista[index].innerText);
-  }
-  localStorage.setItem("toDoListA", JSON.stringify(array));
-  for (let index = 0; index < lista.length; index += 1) {
-    array2.push(lista[index].className);
-  }
-  localStorage.setItem("toDoListB", JSON.stringify(array2));
-}
-
 // https://www.youtube.com/watch?v=b8sUhU_eq3g&t=1548s
+
+function loadToDo(arriando) {
+  areaInput.value = '';
+  const data2 = localStorage.getItem('toDoListB');
+  const LIST = JSON.parse(data2);
+  for (let index = 0; index < arriando.length; index += 1) {
+    const li = document.createElement('li');
+    li.className = `${LIST[index]}`;
+    li.appendChild(document.createTextNode(arriando[index]));
+    listaOl.appendChild(li);
+  }
+}
 
 window.onload = function setaPagina() {
   let LIST;
-  let data = localStorage.getItem('toDoListA');
+  const data = localStorage.getItem('toDoListA');
   if (data) {
     LIST = JSON.parse(data);
     loadToDo(LIST);
   } else {
     LIST = [];
   }
-}
-
-
-function loadToDo( array ) {
-  areaInput.value = '';
-  let data2 = localStorage.getItem('toDoListB');
-  let LIST = JSON.parse(data2);
-  for (let index = 0; index < array.length; index += 1) {
-    const li = document.createElement('li');
-    li.className = `${LIST[index]}`;
-    li.appendChild(document.createTextNode(array[index]));
-    listaOl.appendChild(li);
-  }
-}
+};
