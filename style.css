@@ -9,7 +9,7 @@
 
 header {
   padding: 10px;
-  background-color: rgb(192, 224, 252);
+  background-color: rgb(192 , 224 , 252);
   border-radius: 3px;
   margin-bottom: 5px;
 }
@@ -23,20 +23,17 @@ header {
 }
 
 #section1 {
-  padding: 10px;
-}
-
-#section1 {
-  background-color: rgb(192, 224, 252);
+  background-color: rgb(192 , 224 , 252);
   border-radius: 3px;
+  padding: 10px;
 }
 
 ol {
   list-style-type: none;
-  padding: 0px;
-  background-color: rgb(192, 224, 252);
+  padding: 0;
+  background-color: rgb(192 , 224 , 252);
   border-radius: 3px;
-  border-bottom: 0px;
+  margin-bottom: 0;
 }
 
 li {
@@ -47,6 +44,6 @@ li {
 #section0 {
   width: 31%;
   padding: 20px;
-  background-color: rgb(64, 171, 221);
+  background-color: rgb(64 , 171 , 221);
   border-radius: 5px;
 }
