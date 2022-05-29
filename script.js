@@ -110,7 +110,7 @@ function loadToDo(arriando) {
   }
 }
 
-window.onload = function setaPagina() {
+window.onload = function loadPage() {
   let LIST;
   const data = localStorage.getItem('toDoListA');
   if (data) {
