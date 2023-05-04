@@ -4,6 +4,13 @@
 1. Desenvolver uma lista de tarefas
 
 ```
+<details>
+  <summary>:speech_balloon: Exemplo de funcionamento</summary>
+  
+![gif exemplo](https://github.com/Lucas-Israel/project-todo-list/blob/main/todo-list-example.gif)
+  
+</details>
+
 # :heavy_exclamation_mark: Arquivos desenvolvidos nesse projeto:
 
 ```
@@ -19,7 +26,6 @@
 ```
 git clone git@github.com:Lucas-Israel/project-todo-list.git
 npm install
-npm test
 abrir index.html
 ```
 
