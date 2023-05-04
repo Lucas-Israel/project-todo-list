@@ -143,14 +143,6 @@ function mudaBaixo() {
 }
 btnBaixo.addEventListener('click', mudaBaixo);
 
-// se nao adicionar o event listener fora da funcao o if nao funciona nao sei pq,
-// nao sei agora que eu resolvi a questao se colocar ele dentro ia mudar algo
-// mas assim esta funcionando
-
-// https://developer.mozilla.org/pt-BR/docs/Web/API/Node/insertBefore
-
-// acho que aprendi a usar o console pra me salvar dos stucks que eu tenho
-
 function removeSelected() {
   const selected = document.querySelector('.selected');
   if (selected) {
